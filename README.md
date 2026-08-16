@@ -1,4 +1,5 @@
 # Auto Scaling na AWS com Linux
+<img width="1704" height="1038" alt="image" src="https://github.com/user-attachments/assets/32675740-69a1-45e8-8945-c1668a7cfc1b" />
 
 ## Sobre este lab
 
