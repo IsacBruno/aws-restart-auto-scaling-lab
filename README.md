@@ -9,7 +9,7 @@ Usei a AWS CLI para criar uma instância EC2, transformei essa instância em uma
 
 ## O que eu já sabia e o que era novo
 
-Eu já tinha alguma noção do que é uma instância EC2, mas ainda não tinha usado a AWS CLI para criar recursos — até então tinha feito tudo pelo console. Então esse lab também serviu para eu me acostumar com comandos do CLI, tipo `aws ec2 run-instances` e `aws ec2 create-image`.
+Eu já tinha alguma noção do que é uma instância EC2, mas ainda não tinha usado a AWS CLI para criar recursos  até então tinha feito tudo pelo console. Então esse lab também serviu para eu me acostumar com comandos do CLI, tipo `aws ec2 run-instances` e `aws ec2 create-image`.
 
 A parte de Auto Scaling em si era completamente nova pra mim. Entender a diferença entre capacidade desejada, mínima e máxima, e como isso se conecta com uma política de scaling baseada em CPU, foi o que exigiu mais atenção.
 
@@ -65,13 +65,13 @@ Foi nesse ponto que entendi melhor o papel do "target tracking": em vez de eu de
 
 ### 5. Testando o Auto Scaling
 
-Para verificar se tudo estava funcionando, acessei a aplicação pelo DNS do Load Balancer e usei o botão "Start Stress", que força a CPU da instância a subir até 100%. Depois de alguns minutos acompanhando a aba Activity do Auto Scaling Group, vi uma nova instância sendo criada — o CloudWatch detectou que a CPU média ultrapassou os 50% configurados e a política de scale-out entrou em ação.
+Para verificar se tudo estava funcionando, acessei a aplicação pelo DNS do Load Balancer e usei o botão "Start Stress", que força a CPU da instância a subir até 100%. Depois de alguns minutos acompanhando a aba Activity do Auto Scaling Group, vi uma nova instância sendo criada  o CloudWatch detectou que a CPU média ultrapassou os 50% configurados e a política de scale-out entrou em ação.
 
 ## O que eu entendi com esse lab
 
 O principal aprendizado foi visualizar, na prática, como as peças se conectam: AMI, launch template, Auto Scaling Group e Load Balancer trabalham juntos para manter a aplicação disponível mesmo com variação de carga, sem precisar de intervenção manual.
 
-Também ficou mais claro pra mim o motivo de usar subnets privadas para as instâncias do Auto Scaling Group, deixando só o Load Balancer exposto nas subnets públicas — é uma prática de segurança que reduz a superfície de ataque da aplicação.
+Também ficou mais claro pra mim o motivo de usar subnets privadas para as instâncias do Auto Scaling Group, deixando só o Load Balancer exposto nas subnets públicas  é uma prática de segurança que reduz a superfície de ataque da aplicação.
 
 ## Possíveis próximos passos
 
